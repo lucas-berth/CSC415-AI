@@ -1,7 +1,7 @@
-from collections import defaultdict
 
+#code taken from LINK = https://www.geeksforgeeks.org/python-program-for-breadth-first-search-or-bfs-for-a-graph/ tried this but could not work well
+#final resource = https://www.educative.io/answers/how-to-implement-a-breadth-first-search-in-python
 
-#code taken from LINK = https://www.geeksforgeeks.org/python-program-for-breadth-first-search-or-bfs-for-a-graph/
 
 graph = {
         'A' : ['B', 'C'],
@@ -11,22 +11,22 @@ graph = {
         'E' : ['G1', 'K'],
         'F' : ['L', 'M'],
         'H' : ['N', 'G2'],
-        'I' : ['D'],
-        'J' : ['D'],
-        'K' : ['E'],
-        'L' : ['F'],
-        'M' : ['F'],
-        'N' : ['H'],
-        'G1' : ['E'],
-        'G2' : ['H']}
+        'I' : [],
+        'J' : [],
+        'K' : [],
+        'L' : [],
+        'M' : [],
+        'N' : [],
+        'G1' : [],
+        'G2' : []}
 
-queue = []
 visited = []
+queue = []
 
-def BFS(graph, visited, node):
+
+def BFS(visited, graph, node):
         
-        queue = []
-        visited = []
+        
         #learn about children and how that works with AI algos 
 
         visited.append(node)
@@ -35,15 +35,12 @@ def BFS(graph, visited, node):
         while queue:
             s = queue.pop(0)
             print(s, end = " ")
-            #int(s)
-        for neighbour in graph[s]:
-            if neighbour not in visited:
-                visited.append(neighbour)
-                queue.append(neighbour)
+            
+            for neighbour in graph[s]:
+                if neighbour not in visited:
+                    visited.append(neighbour)
+                    queue.append(neighbour)
 
-
-
-    
 BFS(visited, graph, 'A')
 
 
