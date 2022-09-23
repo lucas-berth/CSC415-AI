@@ -24,7 +24,7 @@ visited = []
 queue = []
 
 
-def BFS(visited, graph, node):
+def BFS(visited, graph, node, goal):
         
         
         #learn about children and how that works with AI algos 
@@ -40,9 +40,14 @@ def BFS(visited, graph, node):
                 if neighbour not in visited:
                     visited.append(neighbour)
                     queue.append(neighbour)
+        #tried to add logic to check the current node with goal
+        #if visited[s] == goal:
+        #    print("success")
+       #     return
 
-BFS(visited, graph, 'A')
+BFS(visited, graph, 'A', 'F')
 
 
-
+#Also did not get this one to work which was disappointing 
+#I think the logic is almost there, just need to add in logic to compare to whatever node is being evaluated.
 
