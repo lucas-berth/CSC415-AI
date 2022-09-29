@@ -56,7 +56,7 @@ class Graph:
             '11th and 48th': 1,
             '10th and 48th': 1,
             '9th and 48th': 1,
-            '8th and 48th': 1,
+            '8th and 48th': 1
         }
 
         return H[n]
