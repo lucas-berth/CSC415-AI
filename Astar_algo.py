@@ -175,5 +175,14 @@ adjacency_list = {
     '9th and 48th': [('8th and 48th', 3.5)],
     '8th and 48th': [('8th and 47th', 1)]
     }   
+
+
+array = []
+array.add(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12)
+
+
+TOD = input("What hour in the day is it?: ")
+if input = 
+
 graph1 = Graph(adjacency_list)
 graph1.a_star_algorithm('8th and 42nd', '12th and 46th')
