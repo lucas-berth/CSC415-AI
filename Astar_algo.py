@@ -17,7 +17,6 @@ class Graph:
         Traffic_hour = False
 
 
-
     # heuristic function with equal values for all nodes
     def h(self, n):
         #non traffic heuristic values
