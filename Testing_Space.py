@@ -8,3 +8,6 @@ if val in array:
     print("traffic hour")
 else:
     print("fast")
+
+
+#will not need the array for current scenario but could be useful in the future

@@ -8,9 +8,20 @@ class Graph:
     def get_neighbors(self, v):
         return self.adjacency_list[v]
 
+#logic for traffic
+    val = input("Is it between 2pm and 7pm?: ")
+    if val == 'yes':
+        Traffic_hour = True
+    elif val == 'no':
+        Traffic_hour = False
+
+
+
     # heuristic function with equal values for all nodes
     def h(self, n):
-        H = {
+        #non traffic heuristic values
+        if Graph.Traffic_hour == False:
+            H = {
             '8th and 41st': 1,
             '9th and 41st': 1,
             'Dryer and 41st': 1,
@@ -52,6 +63,51 @@ class Graph:
             '9th and 48th': 1,
             '8th and 48th': 1
         }
+        #traffic heuristic values
+        elif Graph.Traffic_hour == False:
+            H = {
+            '8th and 41st': 6,
+            '9th and 41st': 6,
+            'Dryer and 41st': 1,
+            '10th and 41st': 6,
+            '11th and 41st': 6,
+            '12th and 41st': 8,
+            '12th and 42nd': 8,
+            '11th and 42nd': 6,
+            '10th and 42nd': 6,
+            '9th and 42nd': 6,
+            '8th and 42nd': 6,
+            '8th and 43rd': 6,
+            '9th and 43rd': 6,
+            '10th and 43rd': 6,
+            '11th and 43rd': 6,
+            '12th and 43rd': 8,
+            '12th and 44th': 8,
+            '11th and 44th': 6,
+            '10th and 44th': 6,
+            '9th and 44th': 6,
+            '8th and 44th': 6,
+            '8th and 45th': 6,
+            '9th and 45th': 6,
+            '10th and 45th': 6,
+            '11th and 45th': 6,
+            '12th and 45th': 8,
+            '12th and 46th': 8,
+            '11th and 46th': 2,
+            '10th and 46th': 6,
+            '9th and 46th': 6,
+            '8th and 46th': 6,
+            '8th and 47th': 6,
+            '9th and 47th': 6,
+            '10th and 47th': 6,
+            '11th and 47th': 6,
+            '12th and 47th': 8,
+            '11th and 48th': 6,
+            '10th and 48th': 6,
+            '9th and 48th': 6,
+            '8th and 48th': 6
+        }
+
         return H[n]
 
     def a_star_algorithm(self, start_node, stop_node):
@@ -177,12 +233,9 @@ adjacency_list = {
     }   
 
 
-array = []
-array.add(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12)
 
 
-TOD = input("What hour in the day is it?: ")
-if input = 
+    
 
 graph1 = Graph(adjacency_list)
 graph1.a_star_algorithm('8th and 42nd', '12th and 46th')
