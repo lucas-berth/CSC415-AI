@@ -9,6 +9,7 @@ class Graph:
         return self.adjacency_list[v]
 
 #logic for traffic
+#confirmed logic works through testing
     val = input("Is it between 2pm and 7pm?: ")
     if val == 'yes':
         Traffic_hour = True
@@ -93,7 +94,7 @@ class Graph:
             '11th and 45th': 6,
             '12th and 45th': 8,
             '12th and 46th': 8,
-            '11th and 46th': 2,
+            '11th and 46th': 6,
             '10th and 46th': 6,
             '9th and 46th': 6,
             '8th and 46th': 6,
@@ -107,7 +108,6 @@ class Graph:
             '9th and 48th': 6,
             '8th and 48th': 6
         }
-
         return H[n]
 
     def a_star_algorithm(self, start_node, stop_node):
