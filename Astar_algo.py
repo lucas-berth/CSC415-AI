@@ -64,7 +64,7 @@ class Graph:
             '8th and 48th': 1
         }
         #traffic heuristic values
-        elif Graph.Traffic_hour == False:
+        elif Graph.Traffic_hour == True:
             H = {
             '8th and 41st': 6,
             '9th and 41st': 6,
