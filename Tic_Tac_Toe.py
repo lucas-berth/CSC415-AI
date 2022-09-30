@@ -92,14 +92,20 @@ class Game:
         #val1 = random.randint(-1,0)
         #val2 = random.randint(1,0)
 
-        ray = [1, 1, 0, 0, 1, 0, 1, 0, 1, 1]
+        ray = [-1, -1, 0, 0, -1, 0, -1, 0, -1, -1]
         for i in range(len(ray)):
             val1 = ray[i]
+        
+        ray2 = [0, 0, 1, 1, 1, 1, 0, 0, 1, 1]
+        for i2 in range(len(ray2)):
+            val2 = ray2[i2]
 
+
+        #logic to add 40% where the AI will act as non-optimally. The other 60% it should (max)
         if result == 'X':
             return (val1, 0, 0)
         elif result == 'O':
-            return (0, 0, 0)
+            return (val2, 0, 0)
         elif result == '.':
             return (0, 0, 0)
 
@@ -138,10 +144,19 @@ class Game:
 
         result = self.is_end()
 
+        #logic to add 40% where the AI will act as non-optimally. The other 60% it should (min)
+        ray3 = [0, -1, -1, 0, -1, 0, -1, -1, -1, 0]
+        for i3 in range(len(ray3)):
+            val3 = ray3[i3]
+        
+        ray4 = [1, 1, 0, 1, 1, 0, 0, 0, 1, 1]
+        for i4 in range(len(ray4)):
+            val4 = ray4[i4]
+
         if result == 'X':
-            return (-1, 0, 0)
+            return (val3, 0, 0)
         elif result == 'O':
-            return (1, 0, 0)
+            return (val4, 0, 0)
         elif result == '.':
             return (0, 0, 0)
 
