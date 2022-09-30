@@ -10,6 +10,8 @@ class Graph:
 
 #logic for traffic
 #confirmed logic works through testing
+#source used for some help - https://stackoverflow.com/questions/53347379/how-to-use-input-as-a-name-for-object-in-python
+#logic is set to take input and set a variable as true, if traffic is true then it should use the other heurisitc list but it does not 
     val = input("Is it between 2pm and 7pm?: ")
     if val == 'yes':
         Traffic_hour = True
@@ -63,8 +65,10 @@ class Graph:
             '9th and 48th': 1,
             '8th and 48th': 1
         }
+        
         #traffic heuristic values
-        elif Graph.Traffic_hour == True:
+        else:
+            #print("we got in here")
             H = {
             '8th and 41st': 6,
             '9th and 41st': 6,
