@@ -1,4 +1,5 @@
 import time
+import random
 
 class Game:
     def __init__(self):
@@ -74,6 +75,7 @@ class Game:
         # 1  - win
 
         # We're initially setting it to -2 as worse than the worst case:
+        #made this positive numbers and negative numbers and it did not change anything.
         maxv = -2
 
         px = None
@@ -86,10 +88,18 @@ class Game:
         # -1 - loss
         # 0  - a tie
         # 1  - win
+
+        #val1 = random.randint(-1,0)
+        #val2 = random.randint(1,0)
+
+        ray = [1, 1, 0, 0, 1, 0, 1, 0, 1, 1]
+        for i in range(len(ray)):
+            val1 = ray[i]
+
         if result == 'X':
-            return (-1, 0, 0)
+            return (val1, 0, 0)
         elif result == 'O':
-            return (1, 0, 0)
+            return (0, 0, 0)
         elif result == '.':
             return (0, 0, 0)
 
@@ -98,6 +108,8 @@ class Game:
                 if self.current_state[i][j] == '.':
                     # On the empty field player 'O' makes a move and calls Min
                     # That's one branch of the game tree.
+                    #this is the max logic for the AI, hopfully adjusting something here will make the AI lose.
+                    #changing around the min and max values did not do much. 
                     self.current_state[i][j] = 'O'
                     (m, min_i, min_j) = self.min()
                     # Fixing the maxv value if needed
